@@ -40,7 +40,7 @@ h2{font-size:clamp(28px,4vw,42px)}
 .btn-lg{padding:16px 26px;font-size:16px}
 
 /* NAV */
-header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.72);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.72);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
 header.nav.scrolled{border-color:var(--line);box-shadow:0 6px 24px -18px rgba(10,24,38,.4)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:70px}
 .logo{display:flex;align-items:center;gap:10px;font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:-.02em}
@@ -74,8 +74,9 @@ header.nav.scrolled{border-color:var(--line);box-shadow:0 6px 24px -18px rgba(10
 .instrument::after{content:"";position:absolute;inset:0;background:radial-gradient(80% 60% at 80% 0%,rgba(23,195,212,.16),transparent 60%);pointer-events:none}
 .inst-top{display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:#7f93a6;text-transform:uppercase}
 .pill-live{display:inline-flex;align-items:center;gap:7px;color:#9fe9c4}
-.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(23,178,106,.6);animation:pulse 2s infinite}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(23,178,106,.55)}70%{box-shadow:0 0 0 9px rgba(23,178,106,0)}100%{box-shadow:0 0 0 0 rgba(23,178,106,0)}}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--green);position:relative}
+.dot::after{content:"";position:absolute;top:50%;left:50%;width:7px;height:7px;margin:-3.5px 0 0 -3.5px;border-radius:50%;background:rgba(23,178,106,.6);animation:pulse 2s infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.6}70%{transform:scale(3.5);opacity:0}100%{transform:scale(3.5);opacity:0}}
 .readout{margin:20px 0 6px;display:flex;align-items:baseline;gap:12px}
 .readout .temp{font-family:var(--mono);font-weight:700;font-size:clamp(38px,7vw,56px);letter-spacing:-.02em;color:#eafcff}
 .readout .unit{font-family:var(--mono);color:#7f93a6;font-size:14px}
@@ -102,6 +103,7 @@ header.nav.scrolled{border-color:var(--line);box-shadow:0 6px 24px -18px rgba(10
 .shead h2{margin-top:16px}
 .shead p{margin-top:16px;color:var(--muted);font-size:18px}
 .center{margin-left:auto;margin-right:auto;text-align:center}
+.shead.center p{margin-left:auto;margin-right:auto}
 
 /* WHAT WE MOVE */
 .move-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
@@ -161,6 +163,8 @@ header.nav.scrolled{border-color:var(--line);box-shadow:0 6px 24px -18px rgba(10
 .partner{background:linear-gradient(135deg,var(--navy),var(--ink));color:#fff;border-radius:24px;padding:56px;display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center;position:relative;overflow:hidden}
 .partner::before{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(23,195,212,.22),transparent 70%)}
 .partner h2{color:#fff}
+.partner .eyebrow{color:var(--cyan)}
+.partner .btn-primary{margin-top:26px}
 .partner p{color:#a9bccb;margin-top:16px;font-size:17px}
 .partner-list{display:grid;gap:14px}
 .partner-list .pl{display:flex;gap:13px;align-items:flex-start;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:16px 18px}
@@ -191,6 +195,7 @@ form.card{background:#fff;border:1px solid var(--line);border-radius:20px;paddin
 .field input,.field select,.field textarea{width:100%;font-family:var(--sans);font-size:15px;padding:13px 14px;border:1px solid var(--line);border-radius:11px;background:var(--ice-2);color:var(--ink);transition:border-color .2s,box-shadow .2s}
 .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(10,94,168,.12);background:#fff}
 .field textarea{resize:vertical;min-height:110px}
+.btn-block{width:100%;justify-content:center}
 .form-note{font-size:12.5px;color:var(--muted);margin-top:8px;text-align:center}
 .form-ok{display:none;text-align:center;padding:16px;background:rgba(23,178,106,.08);border:1px solid rgba(23,178,106,.3);border-radius:12px;color:#0f7a48;font-weight:500;font-size:14.5px;margin-top:8px}
 
