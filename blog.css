@@ -1,126 +1,184 @@
 /* NAV active state */
 .nav-active{color:var(--blue)!important;opacity:1!important}
 
-/* ─── BLOG PAGE HERO — compact thesaurus ─── */
-.blog-page-hero{
-  padding:40px 0 32px;
-  border-bottom:2px solid var(--ink);
+/* ─── BLOG SECTION ─── */
+.blog-section{padding:80px 0 96px}
+
+.blog-section-head{margin-bottom:40px}
+
+.blog-headline{
+  font-size:clamp(26px,3.8vw,46px);
+  margin-top:14px;
+  line-height:1.1;
 }
 
-.thes-head{display:flex;flex-direction:column;gap:10px}
-
-.thes-title-row{
-  display:flex;
-  align-items:baseline;
-  justify-content:space-between;
-  gap:16px;
-}
-
-.thes-title{
-  font-family:var(--disp);
-  font-size:clamp(22px,3vw,32px);
-  font-weight:700;
-  letter-spacing:-.02em;
-  color:var(--ink);
-  line-height:1;
-}
-
-.thes-count{
-  font-family:var(--mono);
-  font-size:12px;
-  letter-spacing:.14em;
-  color:var(--muted);
-  text-transform:uppercase;
-  white-space:nowrap;
-}
-
-.thes-desc{
-  font-size:14px;
-  color:var(--muted);
-  max-width:64ch;
-  line-height:1.55;
-}
-
-/* ─── THESAURUS INDEX ─── */
-.blog-index-section{padding:0 0 80px}
-
-.thes-rule{
-  height:1px;
-  background:var(--line);
-}
-
-.thes-entry{
+/* ─── TWO-PANEL SPLIT ─── */
+.blog-split{
   display:grid;
-  grid-template-columns:48px 1fr 32px;
-  gap:24px;
-  align-items:start;
-  padding:32px 0;
-  text-decoration:none;
-  color:inherit;
-  transition:background .18s;
-  cursor:pointer;
+  grid-template-columns:1fr 2.2fr;
+  border:1px solid var(--line);
+  border-radius:var(--r);
+  overflow:hidden;
 }
-.thes-entry:hover .thes-entry-title{color:var(--blue)}
-.thes-entry:hover .thes-arrow{color:var(--blue);transform:translateX(4px)}
 
-.thes-num{
+/* ─── LEFT PANEL ─── */
+.blog-left{
+  background:var(--ice-2);
+  border-right:1px solid var(--line);
+  padding:28px 0;
+}
+
+.panel-label{
+  display:block;
   font-family:var(--mono);
-  font-size:12px;
-  letter-spacing:.1em;
+  font-size:10.5px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
   color:var(--muted);
-  padding-top:3px;
-  user-select:none;
+  padding:0 24px 16px;
+  border-bottom:1px solid var(--line);
+  margin-bottom:8px;
 }
 
-.thes-entry-body{display:flex;flex-direction:column;gap:10px}
-
-.thes-entry-top{
+.blog-nav-list{
   display:flex;
-  align-items:center;
-  gap:14px;
+  flex-direction:column;
 }
 
-.thes-cat{
+.blog-nav-btn{
+  text-align:left;
+  background:none;
+  border:none;
+  border-left:3px solid transparent;
+  padding:14px 24px 14px 21px;
+  font-family:var(--sans);
+  font-size:14px;
+  font-weight:500;
+  color:var(--muted);
+  cursor:pointer;
+  line-height:1.4;
+  transition:color .18s, background .18s, border-color .18s;
+}
+.blog-nav-btn:hover{
+  color:var(--ink);
+  background:rgba(10,94,168,.04);
+}
+.blog-nav-btn.active{
+  color:var(--blue);
+  border-left-color:var(--blue);
+  background:rgba(10,94,168,.06);
+  font-weight:600;
+}
+
+/* ─── RIGHT PANEL ─── */
+.blog-right{
+  background:#fff;
+  position:relative;
+}
+
+.blog-preview{
+  display:none;
+  padding:36px 40px 40px;
+}
+.blog-preview.active{display:block}
+
+.prev-cat{
+  display:block;
   font-family:var(--mono);
   font-size:11px;
-  letter-spacing:.14em;
+  letter-spacing:.16em;
   text-transform:uppercase;
   color:var(--blue);
+  margin-bottom:14px;
 }
 
-.thes-date{
-  font-family:var(--mono);
-  font-size:11px;
-  color:var(--muted);
-  letter-spacing:.04em;
-}
-
-.thes-entry-title{
+.prev-title{
   font-family:var(--disp);
-  font-size:clamp(17px,2vw,22px);
+  font-size:clamp(20px,2.4vw,28px);
   font-weight:600;
-  letter-spacing:-.015em;
+  letter-spacing:-.02em;
+  line-height:1.15;
   color:var(--ink);
-  line-height:1.2;
-  transition:color .18s;
+  margin-bottom:10px;
 }
 
-.thes-entry-excerpt{
-  font-size:14.5px;
+.prev-sub{
+  font-size:15px;
   color:var(--muted);
-  line-height:1.65;
-  max-width:72ch;
+  font-style:italic;
+  line-height:1.6;
+  margin-bottom:22px;
 }
 
-.thes-arrow{
+/* Stat highlight box */
+.prev-stat{
+  display:flex;
+  align-items:baseline;
+  gap:14px;
+  background:var(--ice);
+  border-left:3px solid var(--cyan);
+  border-radius:0 10px 10px 0;
+  padding:14px 18px;
+  margin-bottom:20px;
+}
+.prev-stat strong{
+  font-family:var(--mono);
+  font-size:clamp(22px,3vw,30px);
+  font-weight:700;
+  color:var(--ink);
+  white-space:nowrap;
+}
+.prev-stat span{
+  font-size:13.5px;
+  color:var(--muted);
+  line-height:1.4;
+}
+
+/* Metadata row */
+.prev-meta{
   display:flex;
   align-items:center;
-  justify-content:flex-end;
-  padding-top:4px;
-  color:var(--line);
-  transition:color .18s, transform .18s;
+  gap:8px;
+  font-family:var(--mono);
+  font-size:12px;
+  color:var(--muted);
+  margin-bottom:24px;
 }
-.thes-arrow svg{width:20px;height:20px}
+.meta-sep{color:var(--line)}
+
+/* Body preview with fade */
+.prev-body{
+  position:relative;
+  max-height:180px;
+  overflow:hidden;
+  margin-bottom:28px;
+}
+
+.prev-label{
+  font-family:var(--mono);
+  font-size:10.5px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:8px;
+  margin-top:18px;
+}
+.prev-label:first-child{margin-top:0}
+
+.prev-body p:not(.prev-label){
+  font-size:14.5px;
+  color:var(--ink);
+  line-height:1.7;
+  margin-bottom:12px;
+}
+
+.prev-fade{
+  position:absolute;
+  bottom:0;left:0;right:0;
+  height:80px;
+  background:linear-gradient(to bottom, transparent, #fff);
+  pointer-events:none;
+}
 
 /* ─── INDIVIDUAL POST PAGE ─── */
 .post-wrap{padding:56px 0 96px}
@@ -172,7 +230,6 @@
   font-size:12px;
   color:var(--muted);
 }
-.meta-sep{color:var(--line)}
 
 .post-body{max-width:720px}
 .post-body p{
@@ -197,10 +254,14 @@
 }
 
 /* ─── RESPONSIVE ─── */
+@media(max-width:860px){
+  .blog-split{grid-template-columns:1fr;border-radius:var(--r)}
+  .blog-left{border-right:none;border-bottom:1px solid var(--line);padding:20px 0}
+  .blog-preview{padding:28px 24px 32px}
+  .prev-stat{flex-direction:column;gap:6px}
+}
 @media(max-width:640px){
-  .thes-entry{grid-template-columns:36px 1fr;gap:14px}
-  .thes-arrow{display:none}
-  .thes-title-row{flex-direction:column;gap:4px}
   .post-footer-nav{flex-direction:column}
   .post-footer-nav .btn{justify-content:center}
+  .blog-headline br{display:none}
 }
