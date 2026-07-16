@@ -28,14 +28,37 @@
     });
   });
 
-  // form (demo — no real submit)
+  // contact form → Formspree
+  var FORMSPREE_ID = 'YOUR_FORM_ID'; // ← paste your Formspree form ID here
   var form=document.getElementById('leadForm');
   form&&form.addEventListener('submit',function(e){
     e.preventDefault();
     var name=form.name.value.trim(),email=form.email.value.trim();
     if(!name||!email){form.reportValidity&&form.reportValidity();return;}
-    document.getElementById('formOk').style.display='block';
-    form.querySelector('button[type=submit]').style.display='none';
+    var btn=form.querySelector('button[type=submit]');
+    btn.textContent='Sending…';
+    btn.disabled=true;
+    fetch('https://formspree.io/f/'+FORMSPREE_ID,{
+      method:'POST',
+      headers:{'Accept':'application/json'},
+      body:new FormData(form)
+    })
+    .then(function(r){return r.json();})
+    .then(function(data){
+      if(data.ok){
+        document.getElementById('formOk').style.display='block';
+        btn.style.display='none';
+      } else {
+        btn.textContent='Send request';
+        btn.disabled=false;
+        alert('Something went wrong — please reach us on WhatsApp instead.');
+      }
+    })
+    .catch(function(){
+      btn.textContent='Send request';
+      btn.disabled=false;
+      alert('Network error — please reach us on WhatsApp instead.');
+    });
   });
 
   // scroll reveal
