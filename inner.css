@@ -1,0 +1,247 @@
+/* ─── INNER PAGE HERO ─── */
+.inner-hero{
+  padding:60px 0 48px;
+  background:linear-gradient(180deg,#fff,var(--ice-2));
+  border-bottom:1px solid var(--line);
+}
+.inner-hero h1{
+  font-size:clamp(28px,4.5vw,48px);
+  margin-top:14px;
+  margin-bottom:0;
+}
+.inner-hero .lead{margin-top:16px;max-width:60ch}
+
+/* ─── PRICING TABLE ─── */
+.price-notice{
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+  background:var(--ice);
+  border:1px solid var(--line);
+  border-left:3px solid var(--cyan);
+  border-radius:12px;
+  padding:16px 20px;
+  font-size:14px;
+  color:var(--muted);
+  margin-bottom:52px;
+}
+.price-notice svg{width:18px;height:18px;flex:none;color:var(--blue);margin-top:1px}
+
+.price-table-wrap{overflow-x:auto}
+
+.price-table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:15px;
+}
+.price-table th{
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--muted);
+  text-align:left;
+  padding:12px 20px;
+  border-bottom:2px solid var(--ink);
+}
+.price-table td{
+  padding:16px 20px;
+  border-bottom:1px solid var(--line);
+  vertical-align:middle;
+}
+.price-table tbody tr:last-child td{border-bottom:none}
+.price-table tbody tr:hover td{background:var(--ice-2)}
+
+.route-label{font-weight:500;color:var(--ink)}
+.price-cell{
+  font-family:var(--mono);
+  font-size:14px;
+  font-weight:700;
+  color:var(--blue);
+  white-space:nowrap;
+}
+.time-cell{
+  font-family:var(--mono);
+  font-size:13px;
+  color:var(--muted);
+  white-space:nowrap;
+}
+
+/* ─── CONTAINER CARDS ─── */
+.container-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+
+.container-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:var(--r);
+  padding:28px 30px;
+}
+.cc-size{
+  font-family:var(--disp);
+  font-size:20px;
+  font-weight:700;
+  color:var(--ink);
+  margin-bottom:18px;
+  padding-bottom:16px;
+  border-bottom:1px solid var(--line);
+}
+.cc-size span{
+  font-family:var(--mono);
+  font-size:13px;
+  font-weight:400;
+  color:var(--muted);
+  margin-left:10px;
+}
+.cc-list{list-style:none;display:grid;gap:11px}
+.cc-list li{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  font-size:14.5px;
+  color:var(--muted);
+}
+.cc-list li svg{width:16px;height:16px;color:var(--green);flex:none;margin-top:3px}
+
+/* ─── INSURANCE ─── */
+.insurance-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+
+.ins-card{
+  background:var(--ice-2);
+  border:1px solid var(--line);
+  border-radius:var(--r);
+  padding:28px 30px;
+}
+.ins-card--hi{
+  background:var(--ink);
+  border-color:var(--ink);
+}
+.ins-amount{
+  font-family:var(--mono);
+  font-size:clamp(28px,4vw,40px);
+  font-weight:700;
+  color:var(--blue);
+  letter-spacing:-.02em;
+  margin-bottom:4px;
+}
+.ins-card--hi .ins-amount{color:var(--cyan)}
+.ins-label{
+  font-family:var(--disp);
+  font-size:14px;
+  font-weight:600;
+  color:var(--muted);
+  margin-bottom:12px;
+}
+.ins-card--hi .ins-label{color:#7f93a6}
+.ins-card p{font-size:14.5px;color:var(--muted)}
+.ins-card--hi p{color:#9fb2c1}
+
+/* ─── PRICE CTA ─── */
+.price-cta{
+  margin-top:72px;
+  padding:48px;
+  background:linear-gradient(135deg,var(--navy),var(--ink));
+  border-radius:20px;
+  color:#fff;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:14px;
+}
+.price-cta h3{color:#fff;font-size:clamp(20px,2.5vw,28px)}
+.price-cta p{color:#a9bccb;font-size:16px;max-width:56ch}
+.price-cta .btn{margin-right:12px}
+
+/* ─── PAYMENT CARDS ─── */
+.pay-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+
+.pay-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:var(--r);
+  padding:30px;
+}
+.pay-icon{
+  width:48px;height:48px;
+  border-radius:12px;
+  background:var(--ice);
+  display:grid;place-items:center;
+  color:var(--blue);
+  margin-bottom:18px;
+}
+.pay-icon svg{width:24px;height:24px}
+.pay-card h3{font-size:18px;margin-bottom:10px}
+.pay-card p{font-size:14.5px;color:var(--muted);margin-bottom:12px}
+.pay-note{
+  font-size:13px!important;
+  background:var(--ice-2);
+  border-radius:8px;
+  padding:12px 14px;
+  margin-top:14px!important;
+}
+
+.card-logos{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+.card-badge{
+  font-family:var(--mono);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.06em;
+  padding:4px 10px;
+  border:1px solid var(--line);
+  border-radius:6px;
+  color:var(--navy);
+}
+
+/* ─── CURRENCIES ─── */
+.currency-row{display:flex;gap:20px;flex-wrap:wrap}
+.currency-item{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:16px 24px;
+  flex:1;
+  min-width:180px;
+}
+.currency-symbol{
+  font-family:var(--mono);
+  font-size:28px;
+  font-weight:700;
+  color:var(--blue);
+}
+.currency-name{font-weight:500;font-size:15px}
+
+/* ─── PAYMENT STEPS ─── */
+.pay-steps{display:grid;gap:0;max-width:680px}
+.pay-step{
+  display:flex;
+  gap:20px;
+  align-items:flex-start;
+  padding:24px 0;
+  border-bottom:1px solid var(--line);
+}
+.pay-step:last-child{border-bottom:none}
+.pay-step-num{
+  width:36px;height:36px;
+  border-radius:50%;
+  background:var(--ink);
+  color:#fff;
+  font-family:var(--mono);
+  font-size:14px;
+  font-weight:700;
+  display:grid;place-items:center;
+  flex:none;
+}
+.pay-step b{font-family:var(--disp);font-size:16px;display:block;margin-bottom:6px}
+.pay-step p{font-size:14.5px;color:var(--muted);margin:0}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:860px){
+  .container-grid,.insurance-grid,.pay-grid{grid-template-columns:1fr}
+  .price-cta{padding:32px 24px}
+  .price-cta .btn{margin-right:0;margin-bottom:8px}
+}
+@media(max-width:640px){
+  .currency-row{flex-direction:column}
+}
