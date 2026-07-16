@@ -29,7 +29,7 @@
   });
 
   // contact form → Formspree
-  var FORMSPREE_ID = 'YOUR_FORM_ID'; // ← paste your Formspree form ID here
+  var FORMSPREE_ID = 'xzdndwkg';
   var form=document.getElementById('leadForm');
   form&&form.addEventListener('submit',function(e){
     e.preventDefault();
